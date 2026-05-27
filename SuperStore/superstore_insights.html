@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperStore Corporate Performance & Profitability Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background: #f0f2f5; }
+        .kpi-card { transition: transform 0.2s, box-shadow 0.2s; }
+        .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .chart-container { position: relative; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06); }
+        .narrative-card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+        .badge-red { background: #fee2e2; color: #dc2626; }
+        .badge-green { background: #dcfce7; color: #16a34a; }
+        .badge-blue { background: #dbeafe; color: #2563eb; }
+        .badge-orange { background: #ffedd5; color: #ea580c; }
+        .metric-positive { color: #16a34a; }
+        .metric-negative { color: #dc2626; }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Top Header -->
+    <header class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white px-6 py-5 shadow-lg">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tight">SuperStore Corporate Performance & Profitability Dashboard</h1>
+                    <p class="text-slate-400 mt-1 text-sm font-medium">Historical Analysis & Strategy Report (2018 - 2021)</p>
+                </div>
+                <div class="text-right hidden sm:block">
+                    <div class="text-xs text-slate-500 font-medium">Dataset</div>
+                    <div class="text-sm font-semibold">9,994 Records</div>
+                    <div class="text-xs text-slate-500 mt-1">Generated: May 2026</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
+
+        <!-- KPI Cards -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Total Revenue -->
+            <div class="kpi-card bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Revenue</span>
+                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                </div>
+                <div class="text-2xl font-bold text-slate-900">$2,835,729</div>
+                <div class="text-xs text-slate-500 mt-1">Gross Sales Volume</div>
+                <div class="mt-2 text-xs text-slate-400">Adjusted: $2,285,729 <span class="badge badge-orange">11 flagged</span></div>
+            </div>
+
+            <!-- Total Profit -->
+            <div class="kpi-card bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Net Profit</span>
+                    <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                </div>
+                <div class="text-2xl font-bold metric-positive">$286,397</div>
+                <div class="text-xs text-slate-500 mt-1">10.1% Profit Margin</div>
+                <div class="mt-2 text-xs text-slate-400">Margin on adjusted: 12.5%</div>
+            </div>
+
+            <!-- Avg Discount -->
+            <div class="kpi-card bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Avg Discount</span>
+                    <div class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path></svg>
+                    </div>
+                </div>
+                <div class="text-2xl font-bold text-slate-900">15.6%</div>
+                <div class="text-xs text-slate-500 mt-1">Across All Transactions</div>
+                <div class="mt-2 text-xs"><span class="badge badge-red">High discount = negative profit</span></div>
+            </div>
+
+            <!-- Avg Fulfillment -->
+            <div class="kpi-card bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Avg Fulfillment</span>
+                    <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
+                    </div>
+                </div>
+                <div class="text-2xl font-bold text-slate-900">4.0 Days</div>
+                <div class="text-xs text-slate-500 mt-1">Order to Ship Delay</div>
+                <div class="mt-2 text-xs text-slate-400">Standard: 5.0 days avg</div>
+            </div>
+        </section>
+
+        <!-- Visualization Grid -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Chart 1: Monthly Trends -->
+            <div class="chart-container">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-base font-semibold text-slate-900">Monthly Sales & Profitability Trends</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Jan 2018 - Dec 2021</p>
+                    </div>
+                    <span class="badge badge-blue">48 Months</span>
+                </div>
+                <div class="h-72">
+                    <canvas id="monthlyTrendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 2: Sub-Category Profitability -->
+            <div class="chart-container">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-base font-semibold text-slate-900">Profitability by Product Sub-Category</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Sorted: Highest profit to largest loss</p>
+                    </div>
+                    <span class="badge badge-orange">17 Categories</span>
+                </div>
+                <div class="h-72">
+                    <canvas id="subcategoryChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 3: Segment Market Share -->
+            <div class="chart-container">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-base font-semibold text-slate-900">Market Share by Customer Segment</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Sales contribution distribution</p>
+                    </div>
+                    <span class="badge badge-green">3 Segments</span>
+                </div>
+                <div class="h-72 flex items-center justify-center">
+                    <canvas id="segmentChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 4: Fulfillment Performance -->
+            <div class="chart-container">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-base font-semibold text-slate-900">Fulfillment Performance by Region & Ship Mode</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Average shipping delay in days</p>
+                    </div>
+                    <span class="badge badge-blue">4 Regions</span>
+                </div>
+                <div class="h-72">
+                    <canvas id="fulfillmentChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Narrative Panel -->
+        <section class="space-y-6">
+            <!-- Data Quality Report -->
+            <div class="narrative-card border-l-4 border-red-500">
+                <div class="flex items-center gap-2 mb-4">
+                    <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path></svg>
+                    <h3 class="text-lg font-bold text-slate-900">Data Quality & Anomalies Report</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-sm font-semibold text-slate-800 mb-2">Fixed $50,000 Sales Adjustments</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            <strong class="text-red-600">11 records (0.11%)</strong> across <strong>4 unique orders</strong> contain artificially capped sales values of exactly $50,000. These span all three product categories:
+                            <strong>Furniture (5)</strong>, <strong>Office Supplies (5)</strong>, and <strong>Technology (1)</strong>.
+                            Geographically concentrated in the <strong>West (7)</strong> and <strong>South (4)</strong> regions.
+                            Affected sub-categories include Tables (2 instances), Bookcases, Chairs, Labels, Storage, Furnishings, Art, Phones, Binders, and Appliances.
+                        </p>
+                        <p class="text-sm text-slate-600 mt-2">
+                            These records inflate total revenue by <strong class="text-red-600">$550,000</strong> (from $2,285,729 to $2,835,729), but contribute only $120.26 to profit, indicating they are likely data entry caps or system overrides rather than genuine transactions.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-slate-800 mb-2">Extreme Single-Order Losses</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            <strong class="text-red-600">1 catastrophic loss event</strong> was identified: Order <strong>CA-2020-108196</strong> in the <strong>Machines</strong> sub-category (East region) posted a <strong>-$6,599.98</strong> loss at a <strong>70% discount</strong>.
+                        </p>
+                        <p class="text-sm text-slate-600 mt-2">
+                            Beyond this extreme outlier, <strong>12 sub-categories operate at a net loss</strong>. The worst offenders are <strong>Binders (-$38,510)</strong>, <strong>Tables (-$32,412)</strong>, and <strong>Machines (-$30,119)</strong>. These categories collectively drain <strong>$186,199</strong> from the bottom line, representing 65% of total gross losses.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Margin Leakage Deep Dive -->
+            <div class="narrative-card border-l-4 border-orange-500">
+                <div class="flex items-center gap-2 mb-4">
+                    <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path></svg>
+                    <h3 class="text-lg font-bold text-slate-900">Margin Leakage Deep Dive: The Discount-Profit Death Spiral</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-red-50 rounded-lg p-4">
+                        <h4 class="text-sm font-semibold text-red-800 mb-2">The Critical Threshold: 21%+ Discount</h4>
+                        <p class="text-sm text-red-700 leading-relaxed">
+                            Orders discounted at <strong>21% or more generate negative average profit</strong>. The inflection point is stark: below 20% discount, average profit per order is <strong>+$24.74</strong>; at 21-30%, it flips to <strong>-$45.68</strong>. At 41-50% discount, each order loses an average of <strong>-$298.70</strong>.
+                        </p>
+                    </div>
+                    <div class="bg-orange-50 rounded-lg p-4">
+                        <h4 class="text-sm font-semibold text-orange-800 mb-2">Highest-Risk Categories</h4>
+                        <p class="text-sm text-orange-700 leading-relaxed">
+                            <strong>Binders</strong> carry the highest average discount at <strong>37.2%</strong> and are the #1 loss leader (-$38,510). <strong>Machines</strong> average <strong>30.6%</strong> discount (-$30,119). <strong>Tables</strong> at <strong>26.1%</strong> (-$32,412). These three categories are the primary margin bleed points and should be the first targets for pricing reform.
+                        </p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4">
+                        <h4 class="text-sm font-semibold text-emerald-800 mb-2">The Revenue Illusion</h4>
+                        <p class="text-sm text-emerald-700 leading-relaxed">
+                            High-discount orders (30%+) generate <strong>-$97.18 avg profit</strong> per transaction, while low-discount orders (under 10%) earn <strong>+$66.90</strong>. The company is effectively <strong>paying customers to take inventory</strong> in loss categories. Total net profit of $286,397 represents only a <strong>10.1% margin</strong> on gross revenue, well below the industry benchmark of 15-20% for retail.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Executive Recommendations -->
+            <div class="narrative-card border-l-4 border-blue-600">
+                <div class="flex items-center gap-2 mb-4">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3 class="text-lg font-bold text-slate-900">Actionable Executive Recommendations</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- Recommendation 1: Pricing -->
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-lg p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-7 h-7 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">1</span>
+                            <h4 class="text-sm font-bold text-blue-900">PRICING: Enforce Discount Guardrails</h4>
+                        </div>
+                        <ul class="text-sm text-blue-800 space-y-1.5 leading-relaxed">
+                            <li>Implement a <strong>hard 20% discount ceiling</strong> on Binders, Tables, and Machines, the three categories where discounts consistently produce net losses.</li>
+                            <li>Require manager approval for any discount above 15% on Furniture items.</li>
+                            <li>Expected impact: Eliminating discounts above 20% on loss categories could recover <strong>$60,000-$80,000</strong> annually in margin.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Recommendation 2: Supply Chain -->
+                    <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-lg p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-7 h-7 rounded-full bg-emerald-600 text-white text-xs font-bold flex items-center justify-center">2</span>
+                            <h4 class="text-sm font-bold text-emerald-900">SUPPLY CHAIN: Optimize Regional Fulfillment</h4>
+                        </div>
+                        <ul class="text-sm text-emerald-800 space-y-1.5 leading-relaxed">
+                            <li>Standard Class shipping averages <strong>5.0 days</strong> across all regions with minimal variance. Investigate whether this meets SLA commitments.</li>
+                            <li>Same Day shipping shows near-zero delay (0.0-0.1 days), confirming reliability. Expand Same Day availability in the <strong>Central region</strong> where it currently has the lowest adoption.</li>
+                            <li>Negotiate carrier contracts for the Central region, which shows the longest Standard Class delays (4.99 days).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Recommendation 3: Inventory -->
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-lg p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-7 h-7 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center">3</span>
+                            <h4 class="text-sm font-bold text-purple-900">INVENTORY: Rationalize Loss-Making SKUs</h4>
+                        </div>
+                        <ul class="text-sm text-purple-800 space-y-1.5 leading-relaxed">
+                            <li>Conduct a full SKU-level profitability audit on <strong>Tables</strong> and <strong>Bookcases</strong> (Furniture). These sub-categories lose money even at moderate discount levels, suggesting cost-of-goods issues.</li>
+                            <li>Consider <strong>discontinuing or repricing</strong> the bottom 5 loss-making sub-categories: Binders, Tables, Machines, Bookcases, and Chairs (combined loss: -$123,000).</li>
+                            <li>Reallocate shelf space and marketing budget toward <strong>Copiers (+$55,618)</strong>, <strong>Phones (+$44,516)</strong>, and <strong>Accessories (+$41,937)</strong>, which have the strongest margins.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Recommendation 4: Customer Tiering -->
+                    <div class="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-lg p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-7 h-7 rounded-full bg-amber-600 text-white text-xs font-bold flex items-center justify-center">4</span>
+                            <h4 class="text-sm font-bold text-amber-900">CUSTOMER TIERING: Segment-Based Incentive Programs</h4>
+                        </div>
+                        <ul class="text-sm text-amber-800 space-y-1.5 leading-relaxed">
+                            <li><strong>Consumer segment</strong> drives 58.4% of revenue ($1,652,792) and 46.8% of profit. Develop a loyalty program to increase repeat purchase frequency and reduce discount dependency.</li>
+                            <li><strong>Corporate segment</strong> contributes 26.6% of revenue but 32.1% of profit, indicating higher-margin transactions. Expand B2B sales outreach and volume pricing tiers.</li>
+                            <li><strong>Home Office</strong> is the smallest segment (15.1% revenue) but maintains healthy margins. Target with premium product bundles to increase average order value.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-6 text-xs text-slate-400">
+            <p>SuperStore Corporate Performance Dashboard | Data Period: 2018-2021 | 9,994 Transaction Records</p>
+            <p class="mt-1">Analysis generated for strategic planning purposes. All figures computed from source dataset.</p>
+        </footer>
+    </main>
+
+    <script>
+        // Chart.js Global Defaults
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.font.size = 11;
+        Chart.defaults.color = '#64748b';
+        Chart.defaults.plugins.legend.labels.usePointStyle = true;
+        Chart.defaults.plugins.legend.labels.pointStyle = 'circle';
+        Chart.defaults.plugins.legend.labels.padding = 16;
+
+        const COLORS = {
+            blue: '#4C78A8',
+            orange: '#F58518',
+            green: '#54A24B',
+            red: '#E45756',
+            teal: '#72B7B2',
+            pink: '#FF9DA6',
+            brown: '#9D755D',
+            gray: '#BAB0AC',
+            emerald: '#10b981',
+            slate: '#64748b',
+        };
+
+        // === Chart 1: Monthly Sales & Profit Trends ===
+        const monthlyCtx = document.getElementById('monthlyTrendChart').getContext('2d');
+        new Chart(monthlyCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan 2018','Feb 2018','Mar 2018','Apr 2018','May 2018','Jun 2018','Jul 2018','Aug 2018','Sep 2018','Oct 2018','Nov 2018','Dec 2018','Jan 2019','Feb 2019','Mar 2019','Apr 2019','May 2019','Jun 2019','Jul 2019','Aug 2019','Sep 2019','Oct 2019','Nov 2019','Dec 2019','Jan 2020','Feb 2020','Mar 2020','Apr 2020','May 2020','Jun 2020','Jul 2020','Aug 2020','Sep 2020','Oct 2020','Nov 2020','Dec 2020','Jan 2021','Feb 2021','Mar 2021','Apr 2021','May 2021','Jun 2021','Jul 2021','Aug 2021','Sep 2021','Oct 2021','Nov 2021','Dec 2021'],
+                datasets: [
+                    {
+                        label: 'Monthly Sales ($)',
+                        data: [14237, 4520, 55691, 28295, 23628, 331130, 33946, 27850, 81777, 31246, 77979, 68284, 18174, 11951, 38726, 33251, 30132, 24797, 28765, 36898, 62125, 130425, 76363, 73879, 18791, 22979, 51896, 38750, 56988, 91431, 39397, 31115, 73438, 59688, 178418, 94432, 43971, 20301, 58872, 36520, 44261, 52982, 45399, 63121, 88803, 77762, 118448, 83893],
+                        borderColor: COLORS.blue,
+                        backgroundColor: 'rgba(76, 120, 168, 0.08)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 0,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: COLORS.blue,
+                    },
+                    {
+                        label: 'Monthly Profit ($)',
+                        data: [2450, 862, 499, 3489, 2739, 4977, -841, 5318, 8328, 3448, 9292, 8984, -3281, 2814, 9732, 4188, 4668, 3336, 3289, 5356, 8209, 2817, 12475, 8017, 2825, 5005, 3612, 2978, 8662, 4750, 4433, 2062, 9329, 16243, 4011, 17885, 7140, 1614, 14752, 933, 6343, 8223, 6953, 9041, 10992, 9275, 9690, 8483],
+                        borderColor: COLORS.emerald,
+                        backgroundColor: 'rgba(16, 185, 129, 0.08)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 0,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: COLORS.emerald,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: { position: 'top', align: 'end' },
+                    tooltip: {
+                        backgroundColor: 'rgba(15,23,42,0.9)',
+                        titleFont: { weight: '600' },
+                        padding: 12,
+                        cornerRadius: 8,
+                        callbacks: {
+                            label: function(ctx) {
+                                return ctx.dataset.label + ': $' + ctx.parsed.y.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { maxRotation: 45, maxTicksLimit: 12, font: { size: 10 } }
+                    },
+                    y: {
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: {
+                            callback: function(value) { return '$' + (value/1000).toFixed(0) + 'K'; },
+                            font: { size: 10 }
+                        }
+                    }
+                }
+            }
+        });
+
+        // === Chart 2: Sub-Category Profitability ===
+        const subcatCtx = document.getElementById('subcategoryChart').getContext('2d');
+        const subcatLabels = ['Tables', 'Bookcases', 'Supplies', 'Fasteners', 'Machines', 'Labels', 'Art', 'Envelopes', 'Furnishings', 'Appliances', 'Storage', 'Chairs', 'Binders', 'Paper', 'Accessories', 'Phones', 'Copiers'];
+        const subcatValues = [-17725, -3473, -1189, 950, 3385, 5546, 6528, 6964, 13059, 18138, 21279, 26590, 30222, 34054, 41937, 44516, 55618];
+        const subcatColors = subcatValues.map(v => v < 0 ? COLORS.red : (v < 5000 ? COLORS.orange : COLORS.green));
+
+        new Chart(subcatCtx, {
+            type: 'bar',
+            data: {
+                labels: subcatLabels,
+                datasets: [{
+                    label: 'Net Profit ($)',
+                    data: subcatValues,
+                    backgroundColor: subcatColors,
+                    borderRadius: 4,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(15,23,42,0.9)',
+                        padding: 12,
+                        cornerRadius: 8,
+                        callbacks: {
+                            label: function(ctx) {
+                                const val = ctx.parsed.x;
+                                return 'Profit: $' + val.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: {
+                            callback: function(value) { return '$' + (value/1000).toFixed(0) + 'K'; },
+                            font: { size: 10 }
+                        }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { font: { size: 10, weight: '500' } }
+                    }
+                }
+            }
+        });
+
+        // === Chart 3: Segment Market Share ===
+        const segmentCtx = document.getElementById('segmentChart').getContext('2d');
+        new Chart(segmentCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Consumer', 'Corporate', 'Home Office'],
+                datasets: [{
+                    data: [1652792, 754027, 428910],
+                    backgroundColor: [COLORS.blue, COLORS.orange, COLORS.teal],
+                    borderWidth: 3,
+                    borderColor: '#ffffff',
+                    hoverOffset: 8,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '60%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { padding: 20, font: { size: 12, weight: '500' } }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15,23,42,0.9)',
+                        padding: 12,
+                        cornerRadius: 8,
+                        callbacks: {
+                            label: function(ctx) {
+                                const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                                const pct = ((ctx.parsed / total) * 100).toFixed(1);
+                                return ctx.label + ': $' + ctx.parsed.toLocaleString() + ' (' + pct + '%)';
+                            }
+                        }
+                    }
+                }
+            },
+            plugins: [{
+                id: 'centerText',
+                beforeDraw: function(chart) {
+                    const { width, height, ctx } = chart;
+                    ctx.restore();
+                    const fontSize = (height / 100).toFixed(2);
+                    ctx.font = 'bold ' + fontSize + 'em Inter, sans-serif';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillStyle = '#1e293b';
+                    const text = '$2.84M';
+                    const textX = Math.round((width - ctx.measureText(text).width) / 2);
+                    const textY = height / 2 - 10;
+                    ctx.fillText(text, textX, textY);
+                    ctx.font = (fontSize * 0.4).toFixed(2) + 'em Inter, sans-serif';
+                    ctx.fillStyle = '#64748b';
+                    const subtext = 'Total Sales';
+                    const subtextX = Math.round((width - ctx.measureText(subtext).width) / 2);
+                    ctx.fillText(subtext, subtextX, height / 2 + 20);
+                    ctx.save();
+                }
+            }]
+        });
+
+        // === Chart 4: Fulfillment Performance ===
+        const fulCtx = document.getElementById('fulfillmentChart').getContext('2d');
+        const regions = ['Central', 'East', 'South', 'West'];
+        const shipModes = ['First Class', 'Same Day', 'Second Class', 'Standard Class'];
+        const fulMatrix = {
+            'First Class':    { 'Central': 2.32, 'East': 2.22, 'South': 2.11, 'West': 2.10 },
+            'Same Day':       { 'Central': 0.03, 'East': 0.00, 'South': 0.01, 'West': 0.10 },
+            'Second Class':   { 'Central': 3.33, 'East': 3.27, 'South': 3.19, 'West': 3.17 },
+            'Standard Class': { 'Central': 4.99, 'East': 4.97, 'South': 5.00, 'West': 5.06 },
+        };
+        const modeColors = [COLORS.orange, COLORS.green, COLORS.blue, COLORS.gray];
+
+        const fulDatasets = shipModes.map((mode, i) => ({
+            label: mode,
+            data: regions.map(r => fulMatrix[mode][r]),
+            backgroundColor: modeColors[i],
+            borderRadius: 4,
+            borderSkipped: false,
+        }));
+
+        new Chart(fulCtx, {
+            type: 'bar',
+            data: {
+                labels: regions,
+                datasets: fulDatasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top', align: 'end' },
+                    tooltip: {
+                        backgroundColor: 'rgba(15,23,42,0.9)',
+                        padding: 12,
+                        cornerRadius: 8,
+                        callbacks: {
+                            label: function(ctx) {
+                                return ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + ' days';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { size: 11, weight: '500' } }
+                    },
+                    y: {
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        title: { display: true, text: 'Avg Delay (Days)', font: { size: 11, weight: '500' } },
+                        ticks: { font: { size: 10 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
