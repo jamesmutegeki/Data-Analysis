@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.egg-info/
+.venv/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -17,3 +18,6 @@ Thumbs.db
 
 # Temp / lock files
 .~lock.*
+
+# Derived pipeline artifacts (regenerate via analysis_pipeline.py)
+Impact of AI on students/pipeline_outputs/students_enriched.csv

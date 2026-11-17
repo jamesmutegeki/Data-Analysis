@@ -1,0 +1,6 @@
+,n,GPA_Change,Post_Semester_GPA,Skill_Retention_Score,Anxiety_Level_During_Exams,Traditional_Study_Hours,Perceived_AI_Dependency
+Minimal (0-2h),10740.0,0.1877,3.3333,75.6019,3.8094,11.8897,2.4509
+Light (2-6h),14840.0,0.2045,3.3518,76.3608,3.8947,11.6945,2.8408
+Moderate (6-12h),12316.0,0.2287,3.3747,77.1279,4.2332,11.1967,3.4822
+Heavy (12-20h),7098.0,0.2128,3.3595,76.5228,4.8679,10.5337,4.5127
+Extreme (20h+),5006.0,0.1562,3.2992,70.2518,5.6211,9.3,6.3662
