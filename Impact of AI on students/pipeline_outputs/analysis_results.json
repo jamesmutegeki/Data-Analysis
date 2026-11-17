@@ -1,0 +1,1045 @@
+{
+  "meta": {
+    "source_file": "ai_student_impact_dataset (1).csv",
+    "rows": 50000,
+    "cols": 16,
+    "columns": [
+      "Student_ID",
+      "Major_Category",
+      "Year_of_Study",
+      "Pre_Semester_GPA",
+      "Weekly_GenAI_Hours",
+      "Primary_Use_Case",
+      "Prompt_Engineering_Skill",
+      "Tool_Diversity",
+      "Paid_Subscription",
+      "Traditional_Study_Hours",
+      "Perceived_AI_Dependency",
+      "Institutional_Policy",
+      "Anxiety_Level_During_Exams",
+      "Post_Semester_GPA",
+      "Skill_Retention_Score",
+      "Burnout_Risk_Level"
+    ]
+  },
+  "audit": {
+    "dtypes": {
+      "Student_ID": "int64",
+      "Major_Category": "str",
+      "Year_of_Study": "str",
+      "Pre_Semester_GPA": "float64",
+      "Weekly_GenAI_Hours": "float64",
+      "Primary_Use_Case": "str",
+      "Prompt_Engineering_Skill": "str",
+      "Tool_Diversity": "int64",
+      "Paid_Subscription": "bool",
+      "Traditional_Study_Hours": "float64",
+      "Perceived_AI_Dependency": "int64",
+      "Institutional_Policy": "str",
+      "Anxiety_Level_During_Exams": "int64",
+      "Post_Semester_GPA": "float64",
+      "Skill_Retention_Score": "float64",
+      "Burnout_Risk_Level": "str"
+    },
+    "missing": {
+      "Student_ID": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Major_Category": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Year_of_Study": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Pre_Semester_GPA": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Weekly_GenAI_Hours": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Primary_Use_Case": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Prompt_Engineering_Skill": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Tool_Diversity": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Paid_Subscription": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Traditional_Study_Hours": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Perceived_AI_Dependency": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Institutional_Policy": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Anxiety_Level_During_Exams": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Post_Semester_GPA": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Skill_Retention_Score": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Burnout_Risk_Level": {
+        "count": 0,
+        "pct": 0.0
+      }
+    },
+    "total_missing": 0,
+    "duplicate_rows": 0,
+    "duplicate_ids": 0,
+    "cardinality": {
+      "Major_Category": {
+        "n_unique": 5,
+        "counts": {
+          "STEM": 15059,
+          "Business": 12538,
+          "Humanities": 9994,
+          "Medical": 6476,
+          "Arts": 5933
+        }
+      },
+      "Year_of_Study": {
+        "n_unique": 5,
+        "counts": {
+          "Junior": 11045,
+          "Freshman": 11031,
+          "Senior": 10634,
+          "Sophomore": 9860,
+          "Graduate": 7430
+        }
+      },
+      "Primary_Use_Case": {
+        "n_unique": 5,
+        "counts": {
+          "Debugging/Troubleshooting": 12295,
+          "Copywriting/Drafting": 12011,
+          "Ideation": 10721,
+          "Summarizing_Reading": 8633,
+          "Direct_Answer_Generation": 6340
+        }
+      },
+      "Prompt_Engineering_Skill": {
+        "n_unique": 3,
+        "counts": {
+          "Beginner": 18495,
+          "Intermediate": 17696,
+          "Advanced": 13809
+        }
+      },
+      "Institutional_Policy": {
+        "n_unique": 3,
+        "counts": {
+          "Allowed_With_Citation": 25224,
+          "Actively_Encouraged": 14988,
+          "Strict_Ban": 9788
+        }
+      },
+      "Burnout_Risk_Level": {
+        "n_unique": 3,
+        "counts": {
+          "Medium": 21144,
+          "Low": 16369,
+          "High": 12487
+        }
+      },
+      "Paid_Subscription": {
+        "n_unique": 2,
+        "counts": {
+          "False": 28846,
+          "True": 21154
+        }
+      }
+    },
+    "range_violations": {
+      "Pre_Semester_GPA": 0,
+      "Post_Semester_GPA": 0,
+      "Weekly_GenAI_Hours": 0,
+      "Traditional_Study_Hours": 0,
+      "Tool_Diversity": 0,
+      "Perceived_AI_Dependency": 0,
+      "Anxiety_Level_During_Exams": 0,
+      "Skill_Retention_Score": 0
+    },
+    "outliers_iqr": {
+      "Pre_Semester_GPA": {
+        "n": 328,
+        "pct": 0.66,
+        "lower_fence": 1.8035000000000003,
+        "upper_fence": 4.5515
+      },
+      "Weekly_GenAI_Hours": {
+        "n": 2583,
+        "pct": 5.17,
+        "lower_fence": -11.605,
+        "upper_fence": 25.715000000000003
+      },
+      "Tool_Diversity": {
+        "n": 0,
+        "pct": 0.0,
+        "lower_fence": -1.0,
+        "upper_fence": 7.0
+      },
+      "Traditional_Study_Hours": {
+        "n": 161,
+        "pct": 0.32,
+        "lower_fence": -3.165000000000002,
+        "upper_fence": 25.435000000000002
+      },
+      "Perceived_AI_Dependency": {
+        "n": 190,
+        "pct": 0.38,
+        "lower_fence": -2.5,
+        "upper_fence": 9.5
+      },
+      "Anxiety_Level_During_Exams": {
+        "n": 0,
+        "pct": 0.0,
+        "lower_fence": -1.5,
+        "upper_fence": 10.5
+      },
+      "Post_Semester_GPA": {
+        "n": 346,
+        "pct": 0.69,
+        "lower_fence": 1.9358750000000002,
+        "upper_fence": 4.836875
+      },
+      "Skill_Retention_Score": {
+        "n": 216,
+        "pct": 0.43,
+        "lower_fence": 39.264999999999986,
+        "upper_fence": 112.745
+      }
+    }
+  },
+  "descriptives": {
+    "usage_band_counts": {
+      "Minimal (0-2h)": 10740,
+      "Light (2-6h)": 14840,
+      "Moderate (6-12h)": 12316,
+      "Heavy (12-20h)": 7098,
+      "Extreme (20h+)": 5006
+    },
+    "gpa_trajectory": {
+      "improved": 43759,
+      "declined": 6192,
+      "flat": 49,
+      "improved_pct": 87.518,
+      "declined_pct": 12.384
+    },
+    "numeric": {
+      "Pre_Semester_GPA": {
+        "count": 50000.0,
+        "mean": 3.14610234,
+        "std": 0.4788543560796029,
+        "min": 1.183,
+        "25%": 2.834,
+        "50%": 3.21,
+        "75%": 3.521,
+        "max": 3.998,
+        "median": 3.21
+      },
+      "Post_Semester_GPA": {
+        "count": 50000.0,
+        "mean": 3.3492994200000004,
+        "std": 0.49567255190623366,
+        "min": 1.0,
+        "25%": 3.02375,
+        "50%": 3.421,
+        "75%": 3.749,
+        "max": 4.0,
+        "median": 3.421
+      },
+      "GPA_Change": {
+        "count": 50000.0,
+        "mean": 0.20319708000000003,
+        "std": 0.18719160508263682,
+        "min": -0.9239999999999999,
+        "25%": 0.08699999999999974,
+        "50%": 0.20399999999999974,
+        "75%": 0.3250000000000002,
+        "max": 1.008,
+        "median": 0.20399999999999974
+      },
+      "Weekly_GenAI_Hours": {
+        "count": 50000.0,
+        "mean": 8.4277522,
+        "std": 8.269489724680797,
+        "min": 0.0,
+        "25%": 2.39,
+        "50%": 5.8,
+        "75%": 11.72,
+        "max": 40.0,
+        "median": 5.8
+      },
+      "Traditional_Study_Hours": {
+        "count": 50000.0,
+        "mean": 11.209271000000001,
+        "std": 5.156426071336191,
+        "min": 1.0,
+        "25%": 7.56,
+        "50%": 11.18,
+        "75%": 14.71,
+        "max": 35.86,
+        "median": 11.18
+      },
+      "AI_Time_Share": {
+        "count": 50000.0,
+        "mean": 38.025632077962605,
+        "std": 24.701550924264172,
+        "min": 0.0,
+        "25%": 17.274016032941766,
+        "50%": 35.15050200664214,
+        "75%": 56.08030105528822,
+        "max": 97.5609756097561,
+        "median": 35.15050200664214
+      },
+      "Tool_Diversity": {
+        "count": 50000.0,
+        "mean": 2.80026,
+        "std": 1.1880202692897142,
+        "min": 1.0,
+        "25%": 2.0,
+        "50%": 3.0,
+        "75%": 4.0,
+        "max": 5.0,
+        "median": 3.0
+      },
+      "Perceived_AI_Dependency": {
+        "count": 50000.0,
+        "mean": 3.50536,
+        "std": 1.8208123400151788,
+        "min": 1.0,
+        "25%": 2.0,
+        "50%": 3.0,
+        "75%": 5.0,
+        "max": 10.0,
+        "median": 3.0
+      },
+      "Anxiety_Level_During_Exams": {
+        "count": 50000.0,
+        "mean": 4.27076,
+        "std": 2.144066454851448,
+        "min": 1.0,
+        "25%": 3.0,
+        "50%": 4.0,
+        "75%": 6.0,
+        "max": 10.0,
+        "median": 4.0
+      },
+      "Skill_Retention_Score": {
+        "count": 50000.0,
+        "mean": 75.798125,
+        "std": 13.281626290267067,
+        "min": 10.78,
+        "25%": 66.82,
+        "50%": 76.0,
+        "75%": 85.19,
+        "max": 100.0,
+        "median": 76.0
+      }
+    },
+    "kpis": {
+      "n_students": 50000,
+      "mean_pre_gpa": 3.146,
+      "mean_post_gpa": 3.349,
+      "mean_gpa_change": 0.2032,
+      "pct_improved": 87.5,
+      "mean_genai_hours": 8.43,
+      "median_genai_hours": 5.8,
+      "mean_traditional_hours": 11.21,
+      "mean_retention": 75.8,
+      "mean_anxiety": 4.27,
+      "high_burnout_pct": 25.0,
+      "paid_sub_pct": 42.3,
+      "mean_dependency": 3.51
+    }
+  },
+  "analyses": {
+    "gpa_by_usage_band": {
+      "Minimal (0-2h)": {
+        "n": 10740,
+        "GPA_Change": 0.1877,
+        "Post_Semester_GPA": 3.3333,
+        "Skill_Retention_Score": 75.6019,
+        "Anxiety_Level_During_Exams": 3.8094,
+        "Traditional_Study_Hours": 11.8897,
+        "Perceived_AI_Dependency": 2.4509
+      },
+      "Light (2-6h)": {
+        "n": 14840,
+        "GPA_Change": 0.2045,
+        "Post_Semester_GPA": 3.3518,
+        "Skill_Retention_Score": 76.3608,
+        "Anxiety_Level_During_Exams": 3.8947,
+        "Traditional_Study_Hours": 11.6945,
+        "Perceived_AI_Dependency": 2.8408
+      },
+      "Moderate (6-12h)": {
+        "n": 12316,
+        "GPA_Change": 0.2287,
+        "Post_Semester_GPA": 3.3747,
+        "Skill_Retention_Score": 77.1279,
+        "Anxiety_Level_During_Exams": 4.2332,
+        "Traditional_Study_Hours": 11.1967,
+        "Perceived_AI_Dependency": 3.4822
+      },
+      "Heavy (12-20h)": {
+        "n": 7098,
+        "GPA_Change": 0.2128,
+        "Post_Semester_GPA": 3.3595,
+        "Skill_Retention_Score": 76.5228,
+        "Anxiety_Level_During_Exams": 4.8679,
+        "Traditional_Study_Hours": 10.5337,
+        "Perceived_AI_Dependency": 4.5127
+      },
+      "Extreme (20h+)": {
+        "n": 5006,
+        "GPA_Change": 0.1562,
+        "Post_Semester_GPA": 3.2992,
+        "Skill_Retention_Score": 70.2518,
+        "Anxiety_Level_During_Exams": 5.6211,
+        "Traditional_Study_Hours": 9.3,
+        "Perceived_AI_Dependency": 6.3662
+      }
+    },
+    "by_use_case": {
+      "Debugging/Troubleshooting": {
+        "n": 12295,
+        "GPA_Change": 0.2491,
+        "Post_Semester_GPA": 3.3958,
+        "Skill_Retention_Score": 78.069,
+        "Anxiety_Level_During_Exams": 4.334,
+        "Weekly_GenAI_Hours": 9.4011
+      },
+      "Copywriting/Drafting": {
+        "n": 12011,
+        "GPA_Change": 0.2004,
+        "Post_Semester_GPA": 3.3353,
+        "Skill_Retention_Score": 75.2311,
+        "Anxiety_Level_During_Exams": 4.1991,
+        "Weekly_GenAI_Hours": 7.628
+      },
+      "Ideation": {
+        "n": 10721,
+        "GPA_Change": 0.1999,
+        "Post_Semester_GPA": 3.3437,
+        "Skill_Retention_Score": 75.5202,
+        "Anxiety_Level_During_Exams": 4.2674,
+        "Weekly_GenAI_Hours": 8.398
+      },
+      "Summarizing_Reading": {
+        "n": 8633,
+        "GPA_Change": 0.1969,
+        "Post_Semester_GPA": 3.3499,
+        "Skill_Retention_Score": 75.225,
+        "Anxiety_Level_During_Exams": 4.273,
+        "Weekly_GenAI_Hours": 8.1705
+      },
+      "Direct_Answer_Generation": {
+        "n": 6340,
+        "GPA_Change": 0.1335,
+        "Post_Semester_GPA": 3.2942,
+        "Skill_Retention_Score": 73.7189,
+        "Anxiety_Level_During_Exams": 4.2864,
+        "Weekly_GenAI_Hours": 8.4559
+      }
+    },
+    "by_skill": {
+      "Beginner": {
+        "n": 18495,
+        "GPA_Change": 0.1852,
+        "Skill_Retention_Score": 71.1014,
+        "Anxiety_Level_During_Exams": 4.2634,
+        "Weekly_GenAI_Hours": 8.2865,
+        "Perceived_AI_Dependency": 3.4933
+      },
+      "Intermediate": {
+        "n": 17696,
+        "GPA_Change": 0.1869,
+        "Skill_Retention_Score": 75.825,
+        "Anxiety_Level_During_Exams": 4.2731,
+        "Weekly_GenAI_Hours": 8.3673,
+        "Perceived_AI_Dependency": 3.5016
+      },
+      "Advanced": {
+        "n": 13809,
+        "GPA_Change": 0.2481,
+        "Skill_Retention_Score": 82.0542,
+        "Anxiety_Level_During_Exams": 4.2777,
+        "Weekly_GenAI_Hours": 8.6944,
+        "Perceived_AI_Dependency": 3.5263
+      }
+    },
+    "skill_x_usage_gpa": {
+      "Minimal (0-2h)": {
+        "Beginner": 0.1718,
+        "Intermediate": 0.1734,
+        "Advanced": 0.2294
+      },
+      "Light (2-6h)": {
+        "Beginner": 0.1861,
+        "Intermediate": 0.1905,
+        "Advanced": 0.2473
+      },
+      "Moderate (6-12h)": {
+        "Beginner": 0.2113,
+        "Intermediate": 0.214,
+        "Advanced": 0.2718
+      },
+      "Heavy (12-20h)": {
+        "Beginner": 0.1942,
+        "Intermediate": 0.1927,
+        "Advanced": 0.2619
+      },
+      "Extreme (20h+)": {
+        "Beginner": 0.1315,
+        "Intermediate": 0.1309,
+        "Advanced": 0.2147
+      }
+    },
+    "by_tool_diversity": {
+      "1": {
+        "n": 8141,
+        "GPA_Change": 0.1821,
+        "Skill_Retention_Score": 72.5896,
+        "Anxiety_Level_During_Exams": 4.2387
+      },
+      "2": {
+        "n": 11830,
+        "GPA_Change": 0.1886,
+        "Skill_Retention_Score": 72.9532,
+        "Anxiety_Level_During_Exams": 4.2867
+      },
+      "3": {
+        "n": 16926,
+        "GPA_Change": 0.2071,
+        "Skill_Retention_Score": 76.4153,
+        "Anxiety_Level_During_Exams": 4.2733
+      },
+      "4": {
+        "n": 8081,
+        "GPA_Change": 0.2243,
+        "Skill_Retention_Score": 79.4084,
+        "Anxiety_Level_During_Exams": 4.269
+      },
+      "5": {
+        "n": 5022,
+        "GPA_Change": 0.2249,
+        "Skill_Retention_Score": 79.8114,
+        "Anxiety_Level_During_Exams": 4.2794
+      }
+    },
+    "by_policy": {
+      "Actively_Encouraged": {
+        "n": 14988,
+        "GPA_Change": 0.2057,
+        "Weekly_GenAI_Hours": 8.4784,
+        "Skill_Retention_Score": 76.1308,
+        "Anxiety_Level_During_Exams": 4.1188,
+        "Perceived_AI_Dependency": 3.5194
+      },
+      "Allowed_With_Citation": {
+        "n": 25224,
+        "GPA_Change": 0.208,
+        "Weekly_GenAI_Hours": 8.4202,
+        "Skill_Retention_Score": 75.9123,
+        "Anxiety_Level_During_Exams": 4.1222,
+        "Perceived_AI_Dependency": 3.5053
+      },
+      "Strict_Ban": {
+        "n": 9788,
+        "GPA_Change": 0.187,
+        "Weekly_GenAI_Hours": 8.3698,
+        "Skill_Retention_Score": 74.9944,
+        "Anxiety_Level_During_Exams": 4.8863,
+        "Perceived_AI_Dependency": 3.484
+      }
+    },
+    "by_dependency": {
+      "Low (1-3)": {
+        "n": 26655,
+        "Anxiety_Level_During_Exams": 3.7828,
+        "GPA_Change": 0.2064,
+        "Skill_Retention_Score": 76.3485,
+        "Weekly_GenAI_Hours": 4.8743
+      },
+      "Medium (4-6)": {
+        "n": 20200,
+        "Anxiety_Level_During_Exams": 4.6603,
+        "GPA_Change": 0.2059,
+        "Skill_Retention_Score": 75.9331,
+        "Weekly_GenAI_Hours": 10.2492
+      },
+      "High (7-10)": {
+        "n": 3145,
+        "Anxiety_Level_During_Exams": 5.9043,
+        "GPA_Change": 0.1588,
+        "Skill_Retention_Score": 70.2664,
+        "Weekly_GenAI_Hours": 26.8455
+      }
+    },
+    "burnout_by_dependency": {
+      "Low (1-3)": {
+        "Low": 42.1,
+        "Medium": 43.5,
+        "High": 14.4
+      },
+      "Medium (4-6)": {
+        "Low": 24.94,
+        "Medium": 43.78,
+        "High": 31.29
+      },
+      "High (7-10)": {
+        "Low": 3.47,
+        "Medium": 22.45,
+        "High": 74.09
+      }
+    },
+    "burnout_by_usage": {
+      "Minimal (0-2h)": {
+        "Low": 49.86,
+        "Medium": 41.24,
+        "High": 8.9
+      },
+      "Light (2-6h)": {
+        "Low": 42.49,
+        "Medium": 44.8,
+        "High": 12.7
+      },
+      "Moderate (6-12h)": {
+        "Low": 29.24,
+        "Medium": 48.01,
+        "High": 22.75
+      },
+      "Heavy (12-20h)": {
+        "Low": 13.83,
+        "Medium": 42.15,
+        "High": 44.01
+      },
+      "Extreme (20h+)": {
+        "Low": 2.5,
+        "Medium": 23.19,
+        "High": 74.31
+      }
+    },
+    "by_major": {
+      "Arts": {
+        "n": 5933,
+        "GPA_Change": 0.1969,
+        "Weekly_GenAI_Hours": 7.2717,
+        "Skill_Retention_Score": 75.6609,
+        "Anxiety_Level_During_Exams": 4.1743
+      },
+      "Business": {
+        "n": 12538,
+        "GPA_Change": 0.1943,
+        "Weekly_GenAI_Hours": 8.2759,
+        "Skill_Retention_Score": 75.2559,
+        "Anxiety_Level_During_Exams": 4.2509
+      },
+      "Humanities": {
+        "n": 9994,
+        "GPA_Change": 0.198,
+        "Weekly_GenAI_Hours": 6.7701,
+        "Skill_Retention_Score": 75.2538,
+        "Anxiety_Level_During_Exams": 4.1425
+      },
+      "Medical": {
+        "n": 6476,
+        "GPA_Change": 0.2014,
+        "Weekly_GenAI_Hours": 7.5467,
+        "Skill_Retention_Score": 75.4846,
+        "Anxiety_Level_During_Exams": 4.2276
+      },
+      "STEM": {
+        "n": 15059,
+        "GPA_Change": 0.2173,
+        "Weekly_GenAI_Hours": 10.4886,
+        "Skill_Retention_Score": 76.7997,
+        "Anxiety_Level_During_Exams": 4.429
+      }
+    },
+    "by_year": {
+      "Freshman": {
+        "n": 11031,
+        "GPA_Change": 0.132,
+        "Weekly_GenAI_Hours": 8.447,
+        "Anxiety_Level_During_Exams": 4.2796
+      },
+      "Sophomore": {
+        "n": 9860,
+        "GPA_Change": 0.1772,
+        "Weekly_GenAI_Hours": 8.4462,
+        "Anxiety_Level_During_Exams": 4.2981
+      },
+      "Junior": {
+        "n": 11045,
+        "GPA_Change": 0.2262,
+        "Weekly_GenAI_Hours": 8.3763,
+        "Anxiety_Level_During_Exams": 4.2632
+      },
+      "Senior": {
+        "n": 10634,
+        "GPA_Change": 0.2431,
+        "Weekly_GenAI_Hours": 8.4593,
+        "Anxiety_Level_During_Exams": 4.2721
+      },
+      "Graduate": {
+        "n": 7430,
+        "GPA_Change": 0.252,
+        "Weekly_GenAI_Hours": 8.4061,
+        "Anxiety_Level_During_Exams": 4.2307
+      }
+    },
+    "paid_vs_free": {
+      "Free": {
+        "n": 28846,
+        "GPA_Change": 0.2004,
+        "Weekly_GenAI_Hours": 7.0331,
+        "Tool_Diversity": 2.7944,
+        "Skill_Retention_Score": 76.072
+      },
+      "Paid": {
+        "n": 21154,
+        "GPA_Change": 0.207,
+        "Weekly_GenAI_Hours": 10.3295,
+        "Tool_Diversity": 2.8083,
+        "Skill_Retention_Score": 75.4246
+      }
+    },
+    "correlation_matrix": {
+      "Weekly_GenAI_Hours": {
+        "Weekly_GenAI_Hours": 1.0,
+        "Traditional_Study_Hours": -0.1574,
+        "Skill_Ord": 0.0191,
+        "Tool_Diversity": 0.0084,
+        "Perceived_AI_Dependency": 0.6655,
+        "Anxiety_Level_During_Exams": 0.2691,
+        "Burnout_Ord": 0.4695,
+        "Pre_Semester_GPA": -0.0011,
+        "Post_Semester_GPA": -0.0186,
+        "GPA_Change": -0.0465,
+        "Skill_Retention_Score": -0.1181
+      },
+      "Traditional_Study_Hours": {
+        "Weekly_GenAI_Hours": -0.1574,
+        "Traditional_Study_Hours": 1.0,
+        "Skill_Ord": -0.0015,
+        "Tool_Diversity": 0.0036,
+        "Perceived_AI_Dependency": -0.1026,
+        "Anxiety_Level_During_Exams": -0.0409,
+        "Burnout_Ord": -0.1358,
+        "Pre_Semester_GPA": -0.0046,
+        "Post_Semester_GPA": 0.1377,
+        "GPA_Change": 0.3763,
+        "Skill_Retention_Score": 0.1476
+      },
+      "Skill_Ord": {
+        "Weekly_GenAI_Hours": 0.0191,
+        "Traditional_Study_Hours": -0.0015,
+        "Skill_Ord": 1.0,
+        "Tool_Diversity": 0.6022,
+        "Perceived_AI_Dependency": 0.0071,
+        "Anxiety_Level_During_Exams": 0.0027,
+        "Burnout_Ord": 0.0097,
+        "Pre_Semester_GPA": -0.0068,
+        "Post_Semester_GPA": 0.0416,
+        "GPA_Change": 0.1274,
+        "Skill_Retention_Score": 0.3268
+      },
+      "Tool_Diversity": {
+        "Weekly_GenAI_Hours": 0.0084,
+        "Traditional_Study_Hours": 0.0036,
+        "Skill_Ord": 0.6022,
+        "Tool_Diversity": 1.0,
+        "Perceived_AI_Dependency": 0.006,
+        "Anxiety_Level_During_Exams": 0.0032,
+        "Burnout_Ord": 0.0058,
+        "Pre_Semester_GPA": -0.0057,
+        "Post_Semester_GPA": 0.0253,
+        "GPA_Change": 0.0814,
+        "Skill_Retention_Score": 0.197
+      },
+      "Perceived_AI_Dependency": {
+        "Weekly_GenAI_Hours": 0.6655,
+        "Traditional_Study_Hours": -0.1026,
+        "Skill_Ord": 0.0071,
+        "Tool_Diversity": 0.006,
+        "Perceived_AI_Dependency": 1.0,
+        "Anxiety_Level_During_Exams": 0.3076,
+        "Burnout_Ord": 0.3693,
+        "Pre_Semester_GPA": 0.0007,
+        "Post_Semester_GPA": -0.0142,
+        "GPA_Change": -0.0393,
+        "Skill_Retention_Score": -0.0843
+      },
+      "Anxiety_Level_During_Exams": {
+        "Weekly_GenAI_Hours": 0.2691,
+        "Traditional_Study_Hours": -0.0409,
+        "Skill_Ord": 0.0027,
+        "Tool_Diversity": 0.0032,
+        "Perceived_AI_Dependency": 0.3076,
+        "Anxiety_Level_During_Exams": 1.0,
+        "Burnout_Ord": 0.1645,
+        "Pre_Semester_GPA": -0.0007,
+        "Post_Semester_GPA": -0.0159,
+        "GPA_Change": -0.0404,
+        "Skill_Retention_Score": -0.0416
+      },
+      "Burnout_Ord": {
+        "Weekly_GenAI_Hours": 0.4695,
+        "Traditional_Study_Hours": -0.1358,
+        "Skill_Ord": 0.0097,
+        "Tool_Diversity": 0.0058,
+        "Perceived_AI_Dependency": 0.3693,
+        "Anxiety_Level_During_Exams": 0.1645,
+        "Burnout_Ord": 1.0,
+        "Pre_Semester_GPA": -0.0962,
+        "Post_Semester_GPA": -0.0955,
+        "GPA_Change": -0.0068,
+        "Skill_Retention_Score": -0.0581
+      },
+      "Pre_Semester_GPA": {
+        "Weekly_GenAI_Hours": -0.0011,
+        "Traditional_Study_Hours": -0.0046,
+        "Skill_Ord": -0.0068,
+        "Tool_Diversity": -0.0057,
+        "Perceived_AI_Dependency": 0.0007,
+        "Anxiety_Level_During_Exams": -0.0007,
+        "Burnout_Ord": -0.0962,
+        "Pre_Semester_GPA": 1.0,
+        "Post_Semester_GPA": 0.9268,
+        "GPA_Change": -0.104,
+        "Skill_Retention_Score": 0.099
+      },
+      "Post_Semester_GPA": {
+        "Weekly_GenAI_Hours": -0.0186,
+        "Traditional_Study_Hours": 0.1377,
+        "Skill_Ord": 0.0416,
+        "Tool_Diversity": 0.0253,
+        "Perceived_AI_Dependency": -0.0142,
+        "Anxiety_Level_During_Exams": -0.0159,
+        "Burnout_Ord": -0.0955,
+        "Pre_Semester_GPA": 0.9268,
+        "Post_Semester_GPA": 1.0,
+        "GPA_Change": 0.2771,
+        "Skill_Retention_Score": 0.1696
+      },
+      "GPA_Change": {
+        "Weekly_GenAI_Hours": -0.0465,
+        "Traditional_Study_Hours": 0.3763,
+        "Skill_Ord": 0.1274,
+        "Tool_Diversity": 0.0814,
+        "Perceived_AI_Dependency": -0.0393,
+        "Anxiety_Level_During_Exams": -0.0404,
+        "Burnout_Ord": -0.0068,
+        "Pre_Semester_GPA": -0.104,
+        "Post_Semester_GPA": 0.2771,
+        "GPA_Change": 1.0,
+        "Skill_Retention_Score": 0.1958
+      },
+      "Skill_Retention_Score": {
+        "Weekly_GenAI_Hours": -0.1181,
+        "Traditional_Study_Hours": 0.1476,
+        "Skill_Ord": 0.3268,
+        "Tool_Diversity": 0.197,
+        "Perceived_AI_Dependency": -0.0843,
+        "Anxiety_Level_During_Exams": -0.0416,
+        "Burnout_Ord": -0.0581,
+        "Pre_Semester_GPA": 0.099,
+        "Post_Semester_GPA": 0.1696,
+        "GPA_Change": 0.1958,
+        "Skill_Retention_Score": 1.0
+      }
+    }
+  },
+  "stats_tests": {
+    "Weekly_GenAI_Hours vs GPA_Change": {
+      "pearson_r": -0.046479,
+      "pearson_p": 0.0,
+      "spearman_r": 0.031825,
+      "spearman_p": 0.0
+    },
+    "Weekly_GenAI_Hours vs Skill_Retention_Score": {
+      "pearson_r": -0.118099,
+      "pearson_p": 0.0,
+      "spearman_r": -0.03891,
+      "spearman_p": 0.0
+    },
+    "Weekly_GenAI_Hours vs Anxiety_Level_During_Exams": {
+      "pearson_r": 0.26908,
+      "pearson_p": 0.0,
+      "spearman_r": 0.221188,
+      "spearman_p": 0.0
+    },
+    "Weekly_GenAI_Hours vs Traditional_Study_Hours": {
+      "pearson_r": -0.157368,
+      "pearson_p": 0.0,
+      "spearman_r": -0.136323,
+      "spearman_p": 0.0
+    },
+    "Perceived_AI_Dependency vs Anxiety_Level_During_Exams": {
+      "pearson_r": 0.30762,
+      "pearson_p": 0.0,
+      "spearman_r": 0.280295,
+      "spearman_p": 0.0
+    },
+    "Perceived_AI_Dependency vs Burnout_Ord": {
+      "pearson_r": 0.369318,
+      "pearson_p": 0.0,
+      "spearman_r": 0.341875,
+      "spearman_p": 0.0
+    },
+    "Perceived_AI_Dependency vs GPA_Change": {
+      "pearson_r": -0.039342,
+      "pearson_p": 0.0,
+      "spearman_r": -0.007233,
+      "spearman_p": 0.105819
+    },
+    "Skill_Ord vs GPA_Change": {
+      "pearson_r": 0.127422,
+      "pearson_p": 0.0,
+      "spearman_r": 0.120236,
+      "spearman_p": 0.0
+    },
+    "Tool_Diversity vs GPA_Change": {
+      "pearson_r": 0.081407,
+      "pearson_p": 0.0,
+      "spearman_r": 0.080314,
+      "spearman_p": 0.0
+    },
+    "Traditional_Study_Hours vs GPA_Change": {
+      "pearson_r": 0.376317,
+      "pearson_p": 0.0,
+      "spearman_r": 0.370876,
+      "spearman_p": 0.0
+    },
+    "GPA_Change vs Skill_Retention_Score": {
+      "pearson_r": 0.195833,
+      "pearson_p": 0.0,
+      "spearman_r": 0.162487,
+      "spearman_p": 0.0
+    },
+    "Anxiety_Level_During_Exams vs Post_Semester_GPA": {
+      "pearson_r": -0.015909,
+      "pearson_p": 0.000375,
+      "spearman_r": -0.012657,
+      "spearman_p": 0.00465
+    },
+    "ANOVA GPA_Change ~ usage band": {
+      "F": 161.121331,
+      "p": 0.0,
+      "eta_squared": 0.012727,
+      "n_groups": 5
+    },
+    "ANOVA GPA_Change ~ use case": {
+      "F": 422.668711,
+      "p": 0.0,
+      "eta_squared": 0.032711,
+      "n_groups": 5
+    },
+    "ANOVA GPA_Change ~ skill": {
+      "F": 561.470484,
+      "p": 0.0,
+      "eta_squared": 0.021967,
+      "n_groups": 3
+    },
+    "ANOVA GPA_Change ~ policy": {
+      "F": 46.293617,
+      "p": 0.0,
+      "eta_squared": 0.001848,
+      "n_groups": 3
+    },
+    "ANOVA Anxiety_Level_During_Exams ~ dependency (anxiety outcome)": {
+      "F": 2098.927134,
+      "p": 0.0,
+      "eta_squared": 0.077459,
+      "n_groups": 3
+    },
+    "paid_vs_free_gpa_change": {
+      "t": 3.822294,
+      "p": 0.000132,
+      "cohens_d": 0.015125,
+      "mean_paid": 0.206971,
+      "mean_free": 0.200429
+    },
+    "extreme_vs_minimal_gpa_change": {
+      "t": -8.152574,
+      "p": 0.0,
+      "cohens_d": -0.070918,
+      "mean_extreme": 0.156227,
+      "mean_minimal": 0.187749
+    },
+    "chi2_dependency_x_burnout": {
+      "chi2": 6779.951203,
+      "p": 0.0,
+      "dof": 4,
+      "cramers_v": 0.260383
+    },
+    "chi2_policy_x_burnout": {
+      "chi2": 153.396577,
+      "p": 0.0,
+      "dof": 4,
+      "cramers_v": 0.039166
+    },
+    "regression_gpa_change": {
+      "r_squared": 0.1693,
+      "standardised_betas": {
+        "Weekly_GenAI_Hours": 0.0238,
+        "Traditional_Study_Hours": 0.3777,
+        "Skill_Ord": 0.1242,
+        "Tool_Diversity": 0.0047,
+        "Perceived_AI_Dependency": -0.0083,
+        "Anxiety_Level_During_Exams": -0.0292,
+        "Pre_Semester_GPA": -0.1014
+      }
+    }
+  },
+  "segments": {
+    "advanced_gpa_gain": 0.2481,
+    "heavy": {
+      "n": 5009,
+      "gpa_change": 0.1563,
+      "anxiety": 5.6197,
+      "retention": 70.2515,
+      "burnout_high_pct": 74.3
+    },
+    "light": {
+      "n": 10740,
+      "gpa_change": 0.1877,
+      "anxiety": 3.8094,
+      "retention": 75.6019,
+      "burnout_high_pct": 8.9
+    },
+    "high_dependency": {
+      "n": 1423,
+      "pct": 2.846,
+      "anxiety": 6.26,
+      "burnout_high_pct": 83.3,
+      "gpa_change": 0.1466
+    }
+  }
+}

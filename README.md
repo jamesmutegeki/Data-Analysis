@@ -12,7 +12,13 @@ A collection of end-to-end data analysis projects using Python, pandas, and inte
 Analyzes how Generative AI usage affects 50,000 students across academic performance, skill retention, anxiety, and burnout. Dataset covers majors, study habits, AI tool diversity, institutional policies, and pre/post semester GPA.
 
 - `ai_student_impact_dataset (1).csv` — 50,000 records, 16 columns
-- `AI_Impact_Student_Analysis_Report.html` — Interactive executive dashboard
+- `analysis_pipeline.py` — 6-stage pipeline: data audit → feature engineering → descriptives → 7 deep-dive analyses → statistical testing (effect sizes) → export
+- `build_dashboard.py` — injects pipeline results into the dashboard (every number is computed, none hardcoded by hand)
+- `AI_Impact_Student_Dashboard.html` — Interactive executive dashboard (Tailwind + Chart.js)
+- `pipeline_outputs/` — `analysis_results.json`, enriched dataset, and 7 summary CSVs
+- `AI_Impact_Student_Analysis_Report.html` — Earlier interactive report (kept for reference)
+
+**Reproduce:** `python analysis_pipeline.py && python build_dashboard.py` (requires `pandas`, `numpy`, `scipy`)
 
 ### 2. Shipping US — Superstore Sales Analysis
 **Folder:** [`Shipping_US/`](./Shipping_US/)
